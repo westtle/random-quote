@@ -93,7 +93,7 @@ main {
 .__tweet::before,
 .__new-quote::before {
     content: "";
-    background: url("/assets/Images/twitter.svg") no-repeat center;
+    background: url("../Images/twitter.svg") no-repeat center;
     background-size: 100%;
     width: 0.9375rem;
     aspect-ratio: 1/1;
@@ -106,7 +106,7 @@ main {
 }
 
 .__new-quote::before {
-	background: url("/assets/Images/chevron-right.svg") no-repeat center;
+	background: url("../Images/chevron-right.svg") no-repeat center;
 	background-size: 100%;
 }
 
