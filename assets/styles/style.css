@@ -1,0 +1,150 @@
+:root {
+	--font-size-primary: 0.906rem; /* 14.5px */
+	--font-size-secondary: 0.688rem; /* 11px */
+
+	--foreground: rgba(0, 0, 0, 0.75);
+
+	--border-color: rgba(0, 0, 0, 0.55);
+	--border-shorthand: 0.063rem solid var(--border-color);
+
+	/* Button */
+	--button-hover-foreground: rgba(255, 255, 255, 0.9);
+	--button-hover-backround: rgba(0, 0, 0, 0.78);
+	--font-size-button: 0.769rem; /* 12.3px */
+
+	--seven: 0.438rem; /* 7px */
+	--twelve: 0.75rem; /* 12px */
+}
+
+*, *::before, *::after {
+	color: var(--foreground);
+	box-sizing: border-box;
+}
+
+body { /* Left & right spacing is left & right from default body margin + 12px */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 91vh;
+	margin-block: 4.5vh;
+	padding: var(--twelve);
+	font-size: var(--font-size-primary);
+}
+
+main {
+	width: 100%;
+	max-width: 31.25rem;
+}
+
+#random-quote {
+	display: flex;
+	align-items: center;
+	border: var(--border-shorthand);
+}
+
+/* Quote / Blockquote */
+
+.__quote-block {
+	border-inline-start: 0.063rem solid var(--border-color);
+	width: 100%;
+	margin-inline: 0;
+	padding: 0.125rem 0 0.125rem 0.5rem;
+}
+
+._author {
+	display: block;
+	font-weight: bold;
+}
+
+._quote {
+	display: flex;
+}
+
+.quotation-mark_ {
+	margin-block-start: 0.063rem;
+	padding-inline-end: 0.125rem;
+    font-size: 1rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.quote-paragraph_ {
+	margin: 0;
+	margin-block-start: 0.25rem;
+	font-style: italic;
+}
+
+/* Buttons */
+
+.__tweet,
+.__new-quote {
+	flex-shrink: 0;
+    background: none;
+    border: none;
+    width: 1.3125rem;
+    aspect-ratio: 1/1;
+    margin-inline: 0.625rem;
+    padding: 0;
+    cursor: pointer;
+
+    position: relative;
+}
+
+.__tweet::before,
+.__new-quote::before {
+    content: "";
+    background: url("/assets/Images/twitter.svg") no-repeat center;
+    background-size: 100%;
+    width: 0.9375rem;
+    aspect-ratio: 1/1;
+    opacity: 0.8;
+
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.__new-quote::before {
+	background: url("/assets/Images/chevron-right.svg") no-repeat center;
+	background-size: 100%;
+}
+
+/* Notice / Link */
+
+#notice {
+	width: 80%;
+	max-width: 31.25rem;
+    padding: 0 var(--seven);
+    font-size: var(--font-size-secondary);
+    text-align: center;
+    line-height: 1.1;
+    word-wrap: break-word;
+
+    position: absolute;
+    left: 50%;
+    bottom: var(--twelve);
+    transform: translateX(-50%);
+}
+
+/* Media Query */
+
+@media (hover: hover) {
+    .__tweet::before,
+    .__new-quote::before {
+        opacity: 0.6;
+    }
+
+    .__tweet:hover::before,
+    .__new-quote:hover::before {
+        opacity: 0.8;
+    }
+}
+
+/* Font Size */
+@media (max-width: 30rem) { /* 480px */
+    html {
+        font-size: calc(1rem - 10%);
+    }
+}
+/* -------- */
